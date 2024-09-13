@@ -1,4 +1,4 @@
-import { createUnknownCustomer, Customer, isUnknown } from '.';
+import { createUnknownCustomer, Customer, isUnknown, registry } from '.';
 
 describe('Customer', () => {
   const data = {
@@ -40,6 +40,11 @@ describe('createUnknownCustomer', () => {
   it('should return "occupant" as name for an unknown customer', () => {
     const unknownCustomer = createUnknownCustomer();
     expect(unknownCustomer.name).toBe('occupant');
+  });
+
+  it('should return "basic" as billing plan for an unknown customer', () => {
+    const unknownCustomer = createUnknownCustomer();
+    expect(unknownCustomer.billingPlan).toBe(registry.billingPlans.basic);
   });
 });
 

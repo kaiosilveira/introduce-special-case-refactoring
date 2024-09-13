@@ -45,6 +45,13 @@ describe('UnknownCustomer', () => {
     const customer = new UnknownCustomer();
     expect(customer.billingPlan).toBe(registry.billingPlans.basic);
   });
+
+  it('should ignore set operations to billingPlan', () => {
+    const customer = new UnknownCustomer();
+
+    customer.billingPlan = registry.billingPlans.premium;
+    expect(customer.billingPlan).toBe(registry.billingPlans.basic);
+  });
 });
 
 describe('isUnknown', () => {

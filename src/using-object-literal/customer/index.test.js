@@ -22,4 +22,11 @@ describe('Customer', () => {
 
     expect(customer.billingPlan).toEqual('premium');
   });
+
+  describe('isUnknown', () => {
+    it('should return false', () => {
+      const customer = new Customer(data);
+      expect(customer.isUnknown).toBe(false);
+    });
+  });
 });

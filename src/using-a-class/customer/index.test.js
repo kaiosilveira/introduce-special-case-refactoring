@@ -23,4 +23,9 @@ describe('Customer', () => {
 
     expect(customer.billingPlan).toEqual(newBillingPlan);
   });
+
+  it('should not be unknown', () => {
+    const customer = new Customer(data);
+    expect(customer.isUnknown).toBe(false);
+  });
 });

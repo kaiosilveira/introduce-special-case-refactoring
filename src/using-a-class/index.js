@@ -4,8 +4,7 @@ import { registry, isUnknown } from './customer';
 export function getCustomerNameOrDefault(site) {
   const aCustomer = site.customer;
   // ... lots of intervening code ...
-  const customerName = aCustomer.name;
-  return customerName;
+  return aCustomer.name;
 }
 
 // client 2

@@ -38,3 +38,10 @@ export class UnknownCustomer {
     return true;
   }
 }
+
+export function isUnknown(arg) {
+  if (!(arg instanceof Customer || arg === 'unknown'))
+    throw new Error(`investigate bad value: <${arg}>`);
+
+  return arg === 'unknown';
+}

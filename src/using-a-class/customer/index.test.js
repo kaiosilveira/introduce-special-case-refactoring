@@ -1,4 +1,4 @@
-import { registry, Customer, UnknownCustomer } from '.';
+import { registry, Customer, UnknownCustomer, isUnknown } from '.';
 
 describe('Customer', () => {
   const data = {
@@ -34,5 +34,22 @@ describe('UnknownCustomer', () => {
   it('should be unknown', () => {
     const customer = new UnknownCustomer();
     expect(customer.isUnknown).toBe(true);
+  });
+});
+
+describe('isUnknown', () => {
+  it('should return true if customer is unknown', () => {
+    const customer = 'unknown';
+    expect(isUnknown(customer)).toBe(true);
+  });
+
+  it('should return false if customer is known', () => {
+    const customer = new Customer({ name: 'John Doe' });
+    expect(isUnknown(customer)).toBe(false);
+  });
+
+  it('should throw an error if customer is not a Customer instance or "unknown"', () => {
+    const badCustomer = { name: 'John Doe' };
+    expect(() => isUnknown(badCustomer)).toThrow('investigate bad value: <[object Object]>');
   });
 });

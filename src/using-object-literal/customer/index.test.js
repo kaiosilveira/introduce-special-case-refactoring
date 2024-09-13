@@ -46,6 +46,11 @@ describe('createUnknownCustomer', () => {
     const unknownCustomer = createUnknownCustomer();
     expect(unknownCustomer.billingPlan).toBe(registry.billingPlans.basic);
   });
+
+  it('should return a total of zero weeks delinquent last year', () => {
+    const unknownCustomer = createUnknownCustomer();
+    expect(unknownCustomer.paymentHistory.weeksDelinquentInLastYear).toBe(0);
+  });
 });
 
 describe('isUnknown', () => {

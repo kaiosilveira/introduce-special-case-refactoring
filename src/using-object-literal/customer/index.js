@@ -34,7 +34,14 @@ export class Customer {
 }
 
 export function createUnknownCustomer() {
-  return { isUnknown: true, name: 'occupant', billingPlan: registry.billingPlans.basic };
+  return {
+    isUnknown: true,
+    name: 'occupant',
+    billingPlan: registry.billingPlans.basic,
+    paymentHistory: {
+      weeksDelinquentInLastYear: 0,
+    },
+  };
 }
 
 export function isUnknown(arg) {

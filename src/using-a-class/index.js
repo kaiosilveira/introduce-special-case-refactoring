@@ -1,11 +1,11 @@
-import { registry } from './customer';
+import { registry, isUnknown } from './customer';
 
 // client 1
 export function getCustomerNameOrDefault(site) {
   const aCustomer = site.customer;
   // ... lots of intervening code ...
   let customerName;
-  if (aCustomer === 'unknown') customerName = 'occupant';
+  if (isUnknown(aCustomer)) customerName = 'occupant';
   else customerName = aCustomer.name;
 
   return customerName;

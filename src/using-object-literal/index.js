@@ -10,7 +10,7 @@ export function getCustomerNameOrDefault(site) {
 
 // client 2
 export function getCustomerPlanOrDefault(aCustomer) {
-  const plan = isUnknown(aCustomer) ? registry.billingPlans.basic : aCustomer.billingPlan;
+  const plan = aCustomer.billingPlan;
   return plan;
 }
 

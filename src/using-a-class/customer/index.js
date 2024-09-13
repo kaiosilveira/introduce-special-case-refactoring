@@ -1,3 +1,5 @@
+import { NullPaymentHistory } from './payment-history';
+
 export const registry = {
   billingPlans: {
     basic: 'basic',
@@ -47,6 +49,10 @@ export class UnknownCustomer {
   }
 
   set billingPlan(_arg) {}
+
+  get paymentHistory() {
+    return new NullPaymentHistory();
+  }
 }
 
 export function isUnknown(arg) {

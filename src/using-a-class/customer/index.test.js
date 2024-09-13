@@ -1,4 +1,5 @@
 import { registry, Customer, UnknownCustomer, isUnknown } from '.';
+import { NullPaymentHistory } from './payment-history';
 
 describe('Customer', () => {
   const data = {
@@ -51,6 +52,11 @@ describe('UnknownCustomer', () => {
 
     customer.billingPlan = registry.billingPlans.premium;
     expect(customer.billingPlan).toBe(registry.billingPlans.basic);
+  });
+
+  it('should return a null payment history', () => {
+    const customer = new UnknownCustomer();
+    expect(customer.paymentHistory).toBeInstanceOf(NullPaymentHistory);
   });
 });
 

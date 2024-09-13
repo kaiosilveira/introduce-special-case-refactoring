@@ -1,4 +1,4 @@
-[![Continuous Integration](https://github.com/kaiosilveira/refactoring-catalog-template/actions/workflows/ci.yml/badge.svg)](https://github.com/kaiosilveira/refactoring-catalog-template/actions/workflows/ci.yml)
+[![Continuous Integration](https://github.com/kaiosilveira/introduce-special-case-refactoring/actions/workflows/ci.yml/badge.svg)](https://github.com/kaiosilveira/introduce-special-case-refactoring/actions/workflows/ci.yml)
 
 # Refactoring catalog repository template
 
@@ -13,7 +13,7 @@ This is a quick template to help me get a new refactoring repo going.
 - Update the repo's homepage on GitHub with:
   - A description
   - A website link to https://github.com/kaiosilveira/refactoring
-  - The following labels: javascript, refactoring, [REPOSITORY_NAME]
+  - The following labels: javascript, refactoring, introduce-special-case-refactoring
 
 2. Replace the lorem ipsum text sections below with actual text
 
@@ -28,7 +28,7 @@ yarn tools:cli generate-diff -f <first_commit_sha> -l <last_commit_sha>
 - To generate the commit history table for the last section, including the correct links:
 
 ```bash
-yarn tools:cli generate-cmt-table -r [REPOSITORY_NAME]
+yarn tools:cli generate-cmt-table -r introduce-special-case-refactoring
 ```
 
 ---
@@ -37,7 +37,7 @@ yarn tools:cli generate-cmt-table -r [REPOSITORY_NAME]
 
 ---
 
-# Refactoring name
+# Introduce Special Case
 
 **Formerly: Old name**
 
@@ -121,8 +121,8 @@ Below there's the commit history for the steps detailed above.
 
 | Commit SHA                                                                  | Message                  |
 | --------------------------------------------------------------------------- | ------------------------ |
-| [cmt-sha-1](https://github.com/kaiosilveira/[REPOSITORY_NAME]/commit-SHA-1) | description of commit #1 |
-| [cmt-sha-2](https://github.com/kaiosilveira/[REPOSITORY_NAME]/commit-SHA-2) | description of commit #2 |
-| [cmt-sha-n](https://github.com/kaiosilveira/[REPOSITORY_NAME]/commit-SHA-n) | description of commit #n |
+| [cmt-sha-1](https://github.com/kaiosilveira/introduce-special-case-refactoring/commit-SHA-1) | description of commit #1 |
+| [cmt-sha-2](https://github.com/kaiosilveira/introduce-special-case-refactoring/commit-SHA-2) | description of commit #2 |
+| [cmt-sha-n](https://github.com/kaiosilveira/introduce-special-case-refactoring/commit-SHA-n) | description of commit #n |
 
-For the full commit history for this project, check the [Commit History tab](https://github.com/kaiosilveira/[REPOSITORY_NAME]/commits/main).
+For the full commit history for this project, check the [Commit History tab](https://github.com/kaiosilveira/introduce-special-case-refactoring/commits/main).

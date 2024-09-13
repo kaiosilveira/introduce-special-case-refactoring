@@ -1,4 +1,4 @@
-import { registry, Customer } from '.';
+import { registry, Customer, UnknownCustomer } from '.';
 
 describe('Customer', () => {
   const data = {
@@ -27,5 +27,12 @@ describe('Customer', () => {
   it('should not be unknown', () => {
     const customer = new Customer(data);
     expect(customer.isUnknown).toBe(false);
+  });
+});
+
+describe('UnknownCustomer', () => {
+  it('should be unknown', () => {
+    const customer = new UnknownCustomer();
+    expect(customer.isUnknown).toBe(true);
   });
 });

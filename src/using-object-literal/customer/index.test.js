@@ -1,4 +1,4 @@
-import { createUnknownCustomer, Customer } from '.';
+import { createUnknownCustomer, Customer, isUnknown } from '.';
 
 describe('Customer', () => {
   const data = {
@@ -35,5 +35,15 @@ describe('createUnknownCustomer', () => {
   it('should return an object with isUnknown set to true', () => {
     const unknownCustomer = createUnknownCustomer();
     expect(unknownCustomer.isUnknown).toBe(true);
+  });
+});
+
+describe('isUnknown', () => {
+  it('should return true if the argument is "unknown"', () => {
+    expect(isUnknown('unknown')).toBe(true);
+  });
+
+  it('should return false if the argument is not "unknown"', () => {
+    expect(isUnknown('John Doe')).toBe(false);
   });
 });

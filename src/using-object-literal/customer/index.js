@@ -36,3 +36,7 @@ export class Customer {
 export function createUnknownCustomer() {
   return { isUnknown: true };
 }
+
+export function isUnknown(arg) {
+  return arg === 'unknown';
+}

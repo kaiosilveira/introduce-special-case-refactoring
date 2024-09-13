@@ -40,8 +40,8 @@ export class UnknownCustomer {
 }
 
 export function isUnknown(arg) {
-  if (!(arg instanceof Customer || arg === 'unknown'))
+  if (!(arg instanceof Customer || arg instanceof UnknownCustomer || arg === 'unknown'))
     throw new Error(`investigate bad value: <${arg}>`);
 
-  return arg === 'unknown';
+  return arg.isUnknown || arg === 'unknown';
 }

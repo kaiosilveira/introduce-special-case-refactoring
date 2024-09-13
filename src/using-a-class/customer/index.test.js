@@ -48,7 +48,10 @@ describe('isUnknown', () => {
     expect(isUnknown(customer)).toBe(false);
   });
 
-  it('should throw an error if customer is not a Customer instance or "unknown"', () => {
+  it('should throw an error if customer is not a Customer instance, UnknownCustomer instance, or "unknown"', () => {
+    expect(() => isUnknown(new Customer({ name: 'John Doe' }))).not.toThrow();
+    expect(() => isUnknown(new UnknownCustomer())).not.toThrow();
+
     const badCustomer = { name: 'John Doe' };
     expect(() => isUnknown(badCustomer)).toThrow('investigate bad value: <[object Object]>');
   });

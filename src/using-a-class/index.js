@@ -36,9 +36,6 @@ export function getWeeksDelinquentInLastYear(aCustomer) {
 export function slightlyDifferentGetCustomerNameOrDefault(site) {
   const aCustomer = site.customer;
   // ... lots of intervening code ...
-  let customerName;
-  if (aCustomer === 'unknown') customerName = 'unknown occupant';
-  else customerName = aCustomer.name;
-
+  const customerName = isUnknown(aCustomer) ? 'unknown occupant' : aCustomer.name;
   return customerName;
 }

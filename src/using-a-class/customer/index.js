@@ -41,6 +41,10 @@ export class UnknownCustomer {
   get name() {
     return 'occupant';
   }
+
+  get billingPlan() {
+    return registry.billingPlans.basic;
+  }
 }
 
 export function isUnknown(arg) {

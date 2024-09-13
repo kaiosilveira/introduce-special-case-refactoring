@@ -40,6 +40,11 @@ describe('UnknownCustomer', () => {
     const customer = new UnknownCustomer();
     expect(customer.name).toBe('occupant');
   });
+
+  it('should return "basic" as billing plan', () => {
+    const customer = new UnknownCustomer();
+    expect(customer.billingPlan).toBe(registry.billingPlans.basic);
+  });
 });
 
 describe('isUnknown', () => {

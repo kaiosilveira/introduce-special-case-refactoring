@@ -34,7 +34,7 @@ export class Customer {
 }
 
 export function createUnknownCustomer() {
-  return { isUnknown: true };
+  return { isUnknown: true, name: 'occupant' };
 }
 
 export function isUnknown(arg) {

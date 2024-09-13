@@ -38,5 +38,5 @@ export function createUnknownCustomer() {
 }
 
 export function isUnknown(arg) {
-  return arg === 'unknown';
+  return typeof arg === 'string' ? arg === 'unknown' : arg.isUnknown;
 }

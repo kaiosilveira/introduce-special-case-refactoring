@@ -39,11 +39,23 @@ describe('createUnknownCustomer', () => {
 });
 
 describe('isUnknown', () => {
-  it('should return true if the argument is "unknown"', () => {
-    expect(isUnknown('unknown')).toBe(true);
+  describe('arg is string', () => {
+    it('should return true if the argument is "unknown"', () => {
+      expect(isUnknown('unknown')).toBe(true);
+    });
+
+    it('should return false if the argument is not "unknown"', () => {
+      expect(isUnknown('John Doe')).toBe(false);
+    });
   });
 
-  it('should return false if the argument is not "unknown"', () => {
-    expect(isUnknown('John Doe')).toBe(false);
+  describe('arg is object', () => {
+    it('should return true if the argument is "unknown"', () => {
+      expect(isUnknown({ isUnknown: true })).toBe(true);
+    });
+
+    it('should return false if the argument is not "unknown"', () => {
+      expect(isUnknown({ isUnknown: false })).toBe(false);
+    });
   });
 });

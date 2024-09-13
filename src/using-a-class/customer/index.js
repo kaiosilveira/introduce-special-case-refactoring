@@ -54,10 +54,3 @@ export class UnknownCustomer {
     return new NullPaymentHistory();
   }
 }
-
-export function isUnknown(arg) {
-  if (!(arg instanceof Customer || arg instanceof UnknownCustomer || arg === 'unknown'))
-    throw new Error(`investigate bad value: <${arg}>`);
-
-  return arg.isUnknown || arg === 'unknown';
-}

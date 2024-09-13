@@ -1,5 +1,3 @@
-import { registry, isUnknown } from './customer';
-
 // client 1
 export function getCustomerNameOrDefault(site) {
   const aCustomer = site.customer;

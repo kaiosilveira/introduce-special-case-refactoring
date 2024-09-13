@@ -15,7 +15,7 @@ export function getCustomerPlanOrDefault(aCustomer) {
 
 // client 3
 export function updateCustomerBillingPlan(aCustomer, newPlan) {
-  if (!isUnknown(aCustomer)) aCustomer.billingPlan = newPlan;
+  aCustomer.billingPlan = newPlan;
   return aCustomer;
 }
 

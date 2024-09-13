@@ -5,7 +5,7 @@ import {
   getWeeksDelinquentInLastYear,
   slightlyDifferentGetCustomerNameOrDefault,
 } from '.';
-import { registry, Customer } from './customer';
+import { registry, Customer, UnknownCustomer } from './customer';
 import { Site } from './site';
 
 describe('client code', () => {
@@ -49,12 +49,12 @@ describe('client code', () => {
     });
 
     it('should not update the customer billing plan if customer is unknown', () => {
-      const aCustomer = 'unknown';
+      const aCustomer = new UnknownCustomer();
       const newPlan = registry.billingPlans.premium;
 
       const updatedCustomer = updateCustomerBillingPlan(aCustomer, newPlan);
 
-      expect(updatedCustomer).toBe('unknown');
+      expect(updatedCustomer.billingPlan).toBe(aCustomer.billingPlan);
     });
   });
 

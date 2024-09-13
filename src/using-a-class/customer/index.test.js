@@ -35,6 +35,11 @@ describe('UnknownCustomer', () => {
     const customer = new UnknownCustomer();
     expect(customer.isUnknown).toBe(true);
   });
+
+  it('should return "occupant" as name', () => {
+    const customer = new UnknownCustomer();
+    expect(customer.name).toBe('occupant');
+  });
 });
 
 describe('isUnknown', () => {

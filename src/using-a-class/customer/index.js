@@ -37,6 +37,10 @@ export class UnknownCustomer {
   get isUnknown() {
     return true;
   }
+
+  get name() {
+    return 'occupant';
+  }
 }
 
 export function isUnknown(arg) {

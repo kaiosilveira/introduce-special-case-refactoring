@@ -1,4 +1,4 @@
-import { Customer } from '.';
+import { createUnknownCustomer, Customer } from '.';
 
 describe('Customer', () => {
   const data = {
@@ -28,5 +28,12 @@ describe('Customer', () => {
       const customer = new Customer(data);
       expect(customer.isUnknown).toBe(false);
     });
+  });
+});
+
+describe('createUnknownCustomer', () => {
+  it('should return an object with isUnknown set to true', () => {
+    const unknownCustomer = createUnknownCustomer();
+    expect(unknownCustomer.isUnknown).toBe(true);
   });
 });

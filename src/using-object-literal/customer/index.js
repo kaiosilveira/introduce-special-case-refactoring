@@ -32,3 +32,7 @@ export class Customer {
     return false;
   }
 }
+
+export function createUnknownCustomer() {
+  return { isUnknown: true };
+}

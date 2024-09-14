@@ -8,8 +8,9 @@ export const registry = {
 };
 
 // client 1
-export function getCustomerNameOrDefault(site) {
-  const aCustomer = site.customer;
+export function getCustomerNameOrDefault(inputSite) {
+  const aSite = enrichSite(inputSite);
+  const aCustomer = aSite.customer;
   // ... lots of intervening code ...
   let customerName;
   if (aCustomer === 'unknown') customerName = 'occupant';

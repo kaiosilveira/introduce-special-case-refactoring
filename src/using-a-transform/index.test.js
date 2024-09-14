@@ -75,6 +75,12 @@ describe('enrichSite', () => {
     const enrichedSite = enrichSite(aSite);
     expect(enrichedSite.customer.billingPlan).toBe(registry.billingPlans.basic);
   });
+
+  it('should set the weeks delinquent to 0 if customer is unknown', () => {
+    const aSite = { customer: 'unknown' };
+    const enrichedSite = enrichSite(aSite);
+    expect(enrichedSite.customer.paymentHistory.weeksDelinquentInLastYear).toBe(0);
+  });
 });
 
 describe('isUnknown', () => {

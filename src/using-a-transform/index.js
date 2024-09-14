@@ -13,7 +13,7 @@ export function getCustomerNameOrDefault(inputSite) {
   const aCustomer = aSite.customer;
   // ... lots of intervening code ...
   let customerName;
-  if (aCustomer === 'unknown') customerName = 'occupant';
+  if (isUnknown(aCustomer)) customerName = 'occupant';
   else customerName = aCustomer.name;
 
   return customerName;

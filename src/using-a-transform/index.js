@@ -31,8 +31,9 @@ export function getCustomerPlanOrDefault(inputSite) {
 export function getWeeksDelinquentInLastYear(inputSite) {
   const aSite = enrichSite(inputSite);
   const aCustomer = aSite.customer;
-  const weeksDelinquent =
-    aCustomer === 'unknown' ? 0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+  const weeksDelinquent = isUnknown(aCustomer)
+    ? 0
+    : aCustomer.paymentHistory.weeksDelinquentInLastYear;
 
   return weeksDelinquent;
 }

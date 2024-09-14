@@ -12,10 +12,7 @@ export function getCustomerNameOrDefault(inputSite) {
   const aSite = enrichSite(inputSite);
   const aCustomer = aSite.customer;
   // ... lots of intervening code ...
-  let customerName;
-  if (isUnknown(aCustomer)) customerName = 'occupant';
-  else customerName = aCustomer.name;
-
+  const customerName = aCustomer.name;
   return customerName;
 }
 

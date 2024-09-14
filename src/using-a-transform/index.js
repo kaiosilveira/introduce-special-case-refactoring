@@ -39,7 +39,14 @@ export function getWeeksDelinquentInLastYear(inputSite) {
 }
 
 export function enrichSite(inputSite) {
-  return _.cloneDeep(inputSite);
+  const result = _.cloneDeep(inputSite);
+  const unknownCustomer = {
+    isUnknown: true,
+  };
+
+  if (isUnknown(result.customer)) result.customer = unknownCustomer;
+  else result.customer.isUnknown = false;
+  return result;
 }
 
 export function isUnknown(aCustomer) {

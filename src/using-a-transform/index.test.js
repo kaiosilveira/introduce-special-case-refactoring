@@ -52,11 +52,16 @@ describe('client code', () => {
 });
 
 describe('enrichSite', () => {
-  it('should return a deep clone of the input site', () => {
-    const inputSite = { customer: { name: 'John Doe' } };
-    const outputSite = enrichSite(inputSite);
-    expect(outputSite).toEqual(inputSite);
-    expect(outputSite).not.toBe(inputSite);
+  it('should return a customer with the isUnknown flag set to true if customer is unknown', () => {
+    const aSite = { customer: 'unknown' };
+    const enrichedSite = enrichSite(aSite);
+    expect(enrichedSite.customer.isUnknown).toBe(true);
+  });
+
+  it('should return a customer with the isUnknown flag set to false if customer is known', () => {
+    const aSite = { customer: { name: 'John Doe' } };
+    const enrichedSite = enrichSite(aSite);
+    expect(enrichedSite.customer.isUnknown).toBe(false);
   });
 });
 

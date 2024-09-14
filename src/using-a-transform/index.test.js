@@ -4,6 +4,7 @@ import {
   getCustomerPlanOrDefault,
   getWeeksDelinquentInLastYear,
   enrichSite,
+  isUnknown,
 } from '.';
 
 describe('client code', () => {
@@ -56,5 +57,15 @@ describe('enrichSite', () => {
     const outputSite = enrichSite(inputSite);
     expect(outputSite).toEqual(inputSite);
     expect(outputSite).not.toBe(inputSite);
+  });
+});
+
+describe('isUnknown', () => {
+  it('should return true if customer is unknown', () => {
+    expect(isUnknown('unknown')).toBe(true);
+  });
+
+  it('should return false if customer is known', () => {
+    expect(isUnknown({ name: 'John Doe' })).toBe(false);
   });
 });

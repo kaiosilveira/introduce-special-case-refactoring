@@ -42,6 +42,7 @@ export function enrichSite(inputSite) {
   const result = _.cloneDeep(inputSite);
   const unknownCustomer = {
     isUnknown: true,
+    name: 'occupant',
   };
 
   if (isUnknown(result.customer)) result.customer = unknownCustomer;

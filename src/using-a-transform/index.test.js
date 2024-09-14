@@ -63,6 +63,12 @@ describe('enrichSite', () => {
     const enrichedSite = enrichSite(aSite);
     expect(enrichedSite.customer.isUnknown).toBe(false);
   });
+
+  it('should set the unknown customer name to "occupant"', () => {
+    const aSite = { customer: 'unknown' };
+    const enrichedSite = enrichSite(aSite);
+    expect(enrichedSite.customer.name).toBe('occupant');
+  });
 });
 
 describe('isUnknown', () => {

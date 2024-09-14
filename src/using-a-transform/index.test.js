@@ -3,6 +3,7 @@ import {
   getCustomerNameOrDefault,
   getCustomerPlanOrDefault,
   getWeeksDelinquentInLastYear,
+  enrichSite,
 } from '.';
 
 describe('client code', () => {
@@ -46,5 +47,14 @@ describe('client code', () => {
       const weeksDelinquent = getWeeksDelinquentInLastYear(aSite);
       expect(weeksDelinquent).toBe(10);
     });
+  });
+});
+
+describe('enrichSite', () => {
+  it('should return a deep clone of the input site', () => {
+    const inputSite = { customer: { name: 'John Doe' } };
+    const outputSite = enrichSite(inputSite);
+    expect(outputSite).toEqual(inputSite);
+    expect(outputSite).not.toBe(inputSite);
   });
 });

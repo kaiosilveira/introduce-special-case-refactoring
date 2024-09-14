@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const registry = {
   billingPlans: {
     basic: 'basic',
@@ -30,4 +32,8 @@ export function getWeeksDelinquentInLastYear(inputSite) {
     aCustomer === 'unknown' ? 0 : aCustomer.paymentHistory.weeksDelinquentInLastYear;
 
   return weeksDelinquent;
+}
+
+export function enrichSite(inputSite) {
+  return _.cloneDeep(inputSite);
 }

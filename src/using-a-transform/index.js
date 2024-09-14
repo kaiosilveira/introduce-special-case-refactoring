@@ -40,6 +40,7 @@ export function enrichSite(inputSite) {
   const unknownCustomer = {
     isUnknown: true,
     name: 'occupant',
+    billingPlan: registry.billingPlans.basic,
   };
 
   if (isUnknown(result.customer)) result.customer = unknownCustomer;

@@ -69,6 +69,12 @@ describe('enrichSite', () => {
     const enrichedSite = enrichSite(aSite);
     expect(enrichedSite.customer.name).toBe('occupant');
   });
+
+  it('should set the unknown customer billing plan to basic', () => {
+    const aSite = { customer: 'unknown' };
+    const enrichedSite = enrichSite(aSite);
+    expect(enrichedSite.customer.billingPlan).toBe(registry.billingPlans.basic);
+  });
 });
 
 describe('isUnknown', () => {

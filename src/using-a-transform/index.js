@@ -43,5 +43,6 @@ export function enrichSite(inputSite) {
 }
 
 export function isUnknown(aCustomer) {
-  return aCustomer === 'unknown';
+  if (aCustomer === 'unknown') return true;
+  else return aCustomer.isUnknown;
 }

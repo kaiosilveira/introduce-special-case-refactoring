@@ -66,6 +66,6 @@ describe('isUnknown', () => {
   });
 
   it('should return false if customer is known', () => {
-    expect(isUnknown({ name: 'John Doe' })).toBe(false);
+    expect(isUnknown({ name: 'John Doe', isUnknown: false })).toBe(false);
   });
 });
